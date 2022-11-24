@@ -110,14 +110,14 @@
 						<configuration>
 							<rules>
 								<rule>
-<!--									<element>PACKAGE</element>-->
-									<element>BUNDLE</element>
+									<element>PACKAGE</element>
+<!--									<element>BUNDLE</element>-->
 									<limits>
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
 											<!-- <minimum>0</minimum> -->
-											<minimum>0.6</minimum>
+											<minimum>0.3</minimum>
 										</limit>
 									</limits>
 								</rule>

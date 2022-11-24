@@ -1,8 +1,11 @@
 package com.equitasit.ms.emp.dto;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 public class StatusDTO {
 
 	public StatusDTO() {
