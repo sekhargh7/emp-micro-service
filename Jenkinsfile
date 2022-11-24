@@ -34,7 +34,7 @@ pipeline {
     stage('Sonarqube') {
 
       steps {
-              sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_459fff9d2e81934697cae936f75714584563522d'
+              sh 'mvn sonar:sonar -Dsonar.host.url=${sonar_srvr_url} -Dsonar.login=${sonar_token}'
       }
     }
    stage('Docker Build') {
