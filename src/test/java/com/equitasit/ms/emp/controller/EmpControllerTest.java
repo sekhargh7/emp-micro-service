@@ -100,7 +100,7 @@ public class EmpControllerTest {
 	@Test
 	public void testGetByIdWhenIdNotFound() throws Exception {
 
-		Mockito.doThrow(new EmpException(EmpExceptionConstants.EMP_NOT_FOUND)).when(empService).get(Mockito.anyInt());
+		Mockito.doThrow(new EmpException(EmpExceptionConstants.EMP_NOT_FOUND.getValue())).when(empService).get(Mockito.anyInt());
 
 		this.mockMvc.perform(get(baseUrl + "/1234").contentType(MediaType.APPLICATION_JSON)).andDo(print())
 				.andExpect(status().is4xxClientError());

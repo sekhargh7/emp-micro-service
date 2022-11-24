@@ -20,7 +20,7 @@ public class EmpExceptionHandler {
 
 		log.error("Error while getting the accounts", ex);
 
-		if (ex.getMessage().equals(EmpExceptionConstants.EMP_NOT_FOUND)) {
+		if (ex.getMessage().equals(EmpExceptionConstants.EMP_NOT_FOUND.getValue())) {
 
 			return new ResponseEntity<>(new StatusDTO(ex.getMessage()), HttpStatus.NOT_FOUND);
 

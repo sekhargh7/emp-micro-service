@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 public class StatusDTO {
     private String statusMsg;
-    
+
     public StatusDTO(String statusMsg) {
         this.statusMsg = statusMsg;
     }

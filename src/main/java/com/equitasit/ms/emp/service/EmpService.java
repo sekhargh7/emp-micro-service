@@ -38,7 +38,7 @@ public class EmpService {
 
 		if (!empOptional.isPresent()) {
 
-			throw new EmpException(EmpExceptionConstants.EMP_NOT_FOUND);
+			throw new EmpException(EmpExceptionConstants.EMP_NOT_FOUND.getValue());
 		}
 
 		Employee employee = modelMapper.map(empDTO, Employee.class);
@@ -54,7 +54,7 @@ public class EmpService {
 
 		if (!empOptional.isPresent()) {
 
-			throw new EmpException(EmpExceptionConstants.EMP_NOT_FOUND);
+			throw new EmpException(EmpExceptionConstants.EMP_NOT_FOUND.getValue());
 		}
 
 		empRepository.deleteById(empno);
@@ -67,7 +67,7 @@ public class EmpService {
 
 		if (!empOptional.isPresent()) {
 
-			throw new EmpException(EmpExceptionConstants.EMP_NOT_FOUND);
+			throw new EmpException(EmpExceptionConstants.EMP_NOT_FOUND.getValue());
 		}
 
 		return modelMapper.map(empOptional.get(), EmpDTO.class);
