@@ -5,8 +5,8 @@ pipeline {
       AWS_ACCOUNT_ID="337901474843"
       AWS_DEFAULT_REGION="us-east-1"
       IMAGE_REPO_NAME="equitas-it"
-      // IMAGE_TAG="hello-micro-service:${env.BUILD_ID}"
-      IMAGE_TAG="hello-micro-service_${env.BUILD_ID}"
+      // IMAGE_TAG="emp-micro-service:${env.BUILD_ID}"
+      IMAGE_TAG="emp-micro-service_${env.BUILD_ID}"
       REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
   }
   tools { 
@@ -33,24 +33,12 @@ pipeline {
 
     stage('Sonarqube') {
 
-      environment {
-          scannerHome = tool 'SonarQubeScanner1'
-      }
       steps {
-          withSonarQubeEnv('SonarQube') {
-              sh "${scannerHome}/bin/sonar-scanner"
-          }
-          // script{
-          //   def qg = waitForQualityGate()
-          //   if (qg.status != "OK") {
-          //     error "Pipeline aborted due to quality gate coverage failure: ${qg.status}"
-          //   }      
-          // }  
-     }
+              sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_459fff9d2e81934697cae936f75714584563522d'
+      }
     }
    stage('Docker Build') {
-      steps {
-      	//sh 'docker build . -t hello-micro-service'
+      steps {      	
       	script{
       	 app = docker.build("${IMAGE_REPO_NAME}:${IMAGE_TAG}")
       	}
