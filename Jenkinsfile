@@ -36,7 +36,7 @@ pipeline {
     stage('Sonarqube') {
 
       steps {
-              sh 'mvn sonar:sonar -Dsonar.host.url=${sonar_srvr_url} -Dsonar.login=${sonar_token}'
+              sh 'mvn sonar:sonar -Dsonar.host.url=${sonar_srvr_url} -Dsonar.login=${sonar_token} -Dsonar.qualitygate.wait=true'
       }
     }
    stage('Docker Build') {
