@@ -21,6 +21,8 @@ pipeline {
             sh '''
                 echo "PATH = ${PATH}"
                 echo "M2_HOME = ${M2_HOME}"
+                echo "sonar_srvr_url = ${sonar_srvr_url}"
+                echo "sonar_token = ${sonar_token}"
             ''' 
         }
     }
