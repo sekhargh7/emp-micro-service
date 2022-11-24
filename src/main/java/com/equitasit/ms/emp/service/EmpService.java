@@ -76,7 +76,7 @@ public class EmpService {
 
     public List<EmpDTO> getAll() {
 
-		
+
         return empRepository.findAll().stream().map(emp -> modelMapper.map(emp, EmpDTO.class))
                 .collect(Collectors.toList());
 
