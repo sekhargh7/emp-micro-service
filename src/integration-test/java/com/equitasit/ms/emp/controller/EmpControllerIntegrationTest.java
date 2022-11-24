@@ -36,6 +36,7 @@ import com.equitasit.ms.emp.service.EmpService;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ActiveProfiles("integration_test")
 public class EmpControllerIntegrationTest {
 
     @LocalServerPort
