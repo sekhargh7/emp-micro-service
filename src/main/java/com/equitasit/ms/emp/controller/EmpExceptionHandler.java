@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public class EmpExceptionHandler {
 
 	@ExceptionHandler(value = EmpException.class)
-	public ResponseEntity handleEmpException(EmpException ex) {
+	public ResponseEntity<?> handleEmpException(EmpException ex) {
 
 		log.error("Error while getting the accounts", ex);
 
@@ -31,7 +31,7 @@ public class EmpExceptionHandler {
 	}
 
 	@ExceptionHandler(value = Exception.class)
-	public ResponseEntity handleException(Exception ex) {
+	public ResponseEntity<?> handleException(Exception ex) {
 
 		log.error("Error while accessing the accounts app", ex);
 
