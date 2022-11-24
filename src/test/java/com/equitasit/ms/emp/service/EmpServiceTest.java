@@ -21,7 +21,7 @@ import com.equitasit.ms.emp.repository.EmpRepository;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = { EmpService.class, ModelMapper.class })
-public class EmpServiceTest {
+ class EmpServiceTest {
 
 	@Autowired
 	private EmpService empService;
@@ -33,12 +33,12 @@ public class EmpServiceTest {
 	private ModelMapper modelMapper;
 
 	@BeforeEach
-	public void init() {
+	 void init() {
 
 	}
 
 	@Test
-	public void testSave() {
+	 void testSave() {
 
 		EmpDTO empDTO = getEmpDTO();
 
@@ -52,7 +52,7 @@ public class EmpServiceTest {
 	}
 
 	@Test
-	public void testUpdate() {
+	 void testUpdate() {
 
 		EmpDTO empDTO = getEmpDTO();
 
@@ -68,7 +68,7 @@ public class EmpServiceTest {
 	}
 
 	@Test
-	public void testRemove() {
+	 void testRemove() {
 
 		Integer empno = 1234;
 
@@ -82,7 +82,7 @@ public class EmpServiceTest {
 	}
 
 	@Test
-	public void testGet() {
+	 void testGet() {
 
 		Integer empno = 1234;
 
@@ -96,7 +96,7 @@ public class EmpServiceTest {
 	}
 
 	@Test
-	public void testGetAll() {
+	 void testGetAll() {
 
 		Mockito.when(empRepository.findById(Mockito.anyInt())).thenReturn(Optional.of(getEmployee()));
 

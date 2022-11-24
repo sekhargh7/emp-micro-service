@@ -37,7 +37,7 @@ import com.equitasit.ms.emp.service.EmpService;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ActiveProfiles("integration_test")
-public class EmpControllerIntegrationTest {
+ class EmpControllerIntegrationTest {
 
     @LocalServerPort
     private int port;
@@ -50,13 +50,13 @@ public class EmpControllerIntegrationTest {
     private ObjectMapper mapper = new ObjectMapper();
 
     @BeforeEach
-    public void init() {
+     void init() {
         baseUrl = "http://localhost:" + port + "/emp";
     }
 
     @Test
     @Order(1)
-    public void testSave() throws Exception {
+     void testSave() throws Exception {
 
         HttpHeaders headers = new HttpHeaders();
 
@@ -83,7 +83,7 @@ public class EmpControllerIntegrationTest {
 
     @Test
     @Order(2)
-    public void testUpdate() throws Exception {
+     void testUpdate() throws Exception {
         HttpHeaders headers = new HttpHeaders();
 
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -110,7 +110,7 @@ public class EmpControllerIntegrationTest {
 
     @Test
     @Order(3)
-    public void testGetById() throws Exception {
+     void testGetById() throws Exception {
         HttpHeaders headers = new HttpHeaders();
 
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -131,7 +131,7 @@ public class EmpControllerIntegrationTest {
 
     @Test
     @Order(4)
-    public void testGetByIdWhenIdNotFound() throws Exception {
+     void testGetByIdWhenIdNotFound() throws Exception {
         HttpHeaders headers = new HttpHeaders();
 
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -146,7 +146,7 @@ public class EmpControllerIntegrationTest {
 
     @Test
     @Order(5)
-    public void testGetAll() throws Exception {
+     void testGetAll() throws Exception {
         HttpHeaders headers = new HttpHeaders();
 
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -166,7 +166,7 @@ public class EmpControllerIntegrationTest {
 
     @Test
     @Order(6)
-    public void testRemove() throws Exception {
+     void testRemove() throws Exception {
         HttpHeaders headers = new HttpHeaders();
 
         headers.setContentType(MediaType.APPLICATION_JSON);

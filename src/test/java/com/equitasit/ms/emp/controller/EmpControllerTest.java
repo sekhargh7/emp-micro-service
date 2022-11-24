@@ -34,7 +34,7 @@ import com.equitasit.ms.emp.service.EmpService;
 //@WebMvcTest(controllers = EmpController.class, excludeAutoConfiguration = { SecurityAutoConfiguration.class })
 @ActiveProfiles("test")
 @ContextConfiguration
-public class EmpControllerTest {
+ class EmpControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -45,13 +45,13 @@ public class EmpControllerTest {
 	private String baseUrl;
 
 	@BeforeEach
-	public void init() {
+	 void init() {
 		baseUrl = "/emp";
 
 	}
 
 	@Test
-	public void testSave() throws Exception {
+	 void testSave() throws Exception {
 
 		EmpDTO empDTO = getEmpDTO();
 
@@ -65,7 +65,7 @@ public class EmpControllerTest {
 	}
 
 	@Test
-	public void testUpdate() throws Exception {
+	 void testUpdate() throws Exception {
 
 		EmpDTO empDTO = getEmpDTO();
 
@@ -79,7 +79,7 @@ public class EmpControllerTest {
 	}
 
 	@Test
-	public void testRemove() throws Exception {
+	 void testRemove() throws Exception {
 
 		Mockito.doNothing().when(empService).remove(Mockito.anyInt());
 
@@ -88,7 +88,7 @@ public class EmpControllerTest {
 	}
 
 	@Test
-	public void testGetById() throws Exception {
+	 void testGetById() throws Exception {
 
 		Mockito.when(empService.get(Mockito.anyInt())).thenReturn(getEmpDTO());
 
@@ -98,7 +98,7 @@ public class EmpControllerTest {
 	}
 
 	@Test
-	public void testGetByIdWhenIdNotFound() throws Exception {
+	 void testGetByIdWhenIdNotFound() throws Exception {
 
 		Mockito.doThrow(new EmpException(EmpExceptionConstants.EMP_NOT_FOUND.getValue())).when(empService).get(Mockito.anyInt());
 
@@ -108,7 +108,7 @@ public class EmpControllerTest {
 	}
 
 	@Test
-	public void testGetAll() throws Exception {
+	 void testGetAll() throws Exception {
 
 		List<EmpDTO> list = new ArrayList<>();
 
@@ -120,7 +120,7 @@ public class EmpControllerTest {
 				.andExpect(status().is2xxSuccessful()).andExpect(content().string(containsString("1234")));
 	}
 
-	public JSONObject getEmpDTOJSONObject(EmpDTO empDTO) throws Exception {
+	 JSONObject getEmpDTOJSONObject(EmpDTO empDTO) throws Exception {
 
 		JSONObject creditInfoObject = new JSONObject();
 
