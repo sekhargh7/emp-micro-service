@@ -36,7 +36,8 @@ pipeline {
     stage('Sonarqube') {
 
       steps {
-              sh 'mvn sonar:sonar -Dsonar.host.url=${sonar_srvr_url} -Dsonar.login=${sonar_token} -Dsonar.qualitygate.wait=true'
+              //sh 'mvn sonar:sonar -Dsonar.host.url=${sonar_srvr_url} -Dsonar.login=${sonar_token} -Dsonar.qualitygate.wait=true'
+               echo 'skipping sonar scan'
       }
     }
    stage('Docker Build') {
