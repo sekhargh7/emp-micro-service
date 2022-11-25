@@ -5,8 +5,8 @@ pipeline {
       AWS_ACCOUNT_ID="337901474843"
       AWS_DEFAULT_REGION="us-east-1"
       IMAGE_REPO_NAME="equitas-it"
-      IMAGE_TAG="emp-micro-service_latest"
-      // IMAGE_TAG="emp-micro-service_${env.BUILD_ID}"
+      // IMAGE_TAG="emp-micro-service_latest"
+      IMAGE_TAG="emp-micro-service_${env.BUILD_ID}"
       REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
   }
   tools { 
