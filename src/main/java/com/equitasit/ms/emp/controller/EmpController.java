@@ -1,5 +1,6 @@
 package com.equitasit.ms.emp.controller;
 
+import java.net.InetAddress;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,11 @@ public class EmpController {
 
 		return responseEntity;
 
+	}
+
+	@GetMapping("test")
+	public ResponseEntity test() throws Exception {
+		return ResponseEntity.ok("test success from "+ InetAddress.getLocalHost().getHostAddress());
 	}
 
 }
